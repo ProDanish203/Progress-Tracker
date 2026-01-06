@@ -4,30 +4,7 @@ import { useState, useEffect } from "react";
 import { Plus } from "lucide-react";
 import { GoalCard, CreateGoalModal } from "./_components/";
 import { Button } from "@/components/ui/button";
-
-export interface Task {
-  id: string;
-  name: string;
-  completed: boolean;
-}
-
-export interface CheckIn {
-  date: string;
-  note?: string;
-}
-
-export interface Goal {
-  id: string;
-  title: string;
-  description?: string;
-  startDate: string;
-  duration: number;
-  currentStreak: number;
-  longestStreak: number;
-  tasks: Task[];
-  checkInHistory: CheckIn[];
-  lastCheckInDate?: string;
-}
+import { Goal } from "@/lib/types";
 
 export default function GoalsPage() {
   const [goals, setGoals] = useState<Goal[]>([]);
@@ -55,6 +32,7 @@ export default function GoalsPage() {
       currentStreak: 0,
       longestStreak: 0,
       tasks: [],
+      topics: [],
       checkInHistory: [],
       ...goalData,
     };

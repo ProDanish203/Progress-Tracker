@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { Flame, CheckCircle2, ArrowRight, X } from "lucide-react";
-import type { Goal } from "../page";
+import type { Goal } from "@/lib/types";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -16,7 +16,9 @@ interface GoalCardProps {
 export function GoalCard({ goal, onCheckIn, onDeleteGoal }: GoalCardProps) {
   const today = new Date().toISOString().split("T")[0];
   const isCheckedInToday = goal.lastCheckInDate === today;
-  const completedTasks = goal.tasks.filter((t) => t.completed).length;
+  const completedTasks = goal.tasks.filter(
+    (t) => t.status === "completed"
+  ).length;
   const totalTasks = goal.tasks.length;
 
   return (

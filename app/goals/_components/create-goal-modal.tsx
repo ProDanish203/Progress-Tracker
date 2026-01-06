@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import type { Goal } from "../page";
+import type { Goal } from "@/lib/types";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";

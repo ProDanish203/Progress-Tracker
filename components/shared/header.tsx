@@ -1,6 +1,7 @@
 import { navLinks } from "@/lib/data";
 import Image from "next/image";
 import Link from "next/link";
+import { DeleteDataAlert } from "./delete-data-alert";
 
 export const Header = () => {
   return (
@@ -26,6 +27,7 @@ export const Header = () => {
             {label}
           </Link>
         ))}
+        <DeleteDataAlert />
       </nav>
     </header>
   );
